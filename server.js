@@ -46,13 +46,13 @@ app.post('/login', async (req, res) => {
       if (passwordMatch) {
         res.json({ message: 'Login successful' });
       } else {
-        res.status(401).json({ error: 'Invalid password' });
+        res.status(201).json({ error: 'Invalid password' });
       }
     } else {
-      res.status(404).json({ error: 'User not found' });
+      res.status(201).json({ error: 'User not found' });
     }
   } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(201).json({ error: 'Internal Server Error' });
   }
 });
 app.post('/register', async (req, res) => {
